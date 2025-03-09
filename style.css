@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('./images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.text-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.text-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.text-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.text-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 105, 180, 0.5);
+    border-radius: 4px;
+}
+
+.main-title {
+    color: #ff69b4;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.description {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.description p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.video-box {
+    width: 100%;
+    height: 350px;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#ytVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 280px;
+    min-height: 80px;
+    width: 90%;
+    z-index: 2;
+    margin: 10px;
+}
+
+.title {
+    color: #ff69b4;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#nedenButton {
+    background: #ff69b4;
+    color: black;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+#nedenButton:hover {
+    transform: scale(1.05);
+    background: #ff8dc7;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+}
+
+.answer-text {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+    color: #ff69b4;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.gif {
+    max-width: 100px;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+@media (max-width: 850px) {
+    .content-wrapper {
+        gap: 1rem;
+    }
+
+    .text-box {
+        padding: 1.5rem;
+        max-height: 300px;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .description p {
+        margin-bottom: 0.8rem;
+    }
+
+    .video-box {
+        height: 250px;
+    }
+
+    .container {
+        max-width: 250px;
+        padding: 0.6rem;
+        margin: 5px;
+    }
+    
+    .title {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+    
+    #nedenButton {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.8rem;
+    }
+}
+
+.surprise-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 9999;
+}
+
+@keyframes flash {
+    0%, 100% { 
+        background: transparent; 
+    }
+    50% { 
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.flash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.flash-effect {
+    animation: flash 0.1s linear infinite;
+} 
